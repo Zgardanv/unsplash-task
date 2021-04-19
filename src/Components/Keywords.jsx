@@ -7,13 +7,11 @@ import AddCircleOutlineIcon from "@material-ui/icons/AddCircleOutline";
 import RemoveCircleOutlineIcon from "@material-ui/icons/RemoveCircleOutline";
 
 const Keywords = ({ keywordHandler }) => {
-  const [newWord, setNew] = useState();
   const [length, setLength] = useState(0);
   const current = store.getState().searchWord;
 
   //Search keyword sending to redux store
   const sendToStore = () => {
-    setNew(current);
     setLength((prev) => prev + 1);
     store.dispatch(addKeyword(current));
   };

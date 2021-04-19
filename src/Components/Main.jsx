@@ -17,7 +17,7 @@ const Main = () => {
   const [noItems, setNoItems] = useState(false);
   let form = useRef(null);
 
-  //get images by keyword, number result photos can be changed 'per_page' number
+  //get images by keyword, result number can be changed 'per_page' number
   const getImages = (keyword) => {
     axios
       .get(
@@ -78,13 +78,14 @@ const Main = () => {
     }
   };
 
+
   return (
     <div>
       <Container>
         <FormWrapper>
           {/* Keyword search form with 'Search' button */}
           <Form ref={form} onSubmit={(e) => handleSubmitForm(e)}>
-            <InputBase onChange={(e) => setKeyword(e.target.value)} />
+            <InputBase  onChange={(e) => setKeyword(e.target.value)} />
             <Button variant="contained" onClick={handleSubmit}>
               Search
             </Button>
