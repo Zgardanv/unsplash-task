@@ -1,25 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import Header from "./Components/Header";
+import { createStore } from "redux";
+import { Provider } from "react-redux";
+import reducer from "./redux/reducer";
+
+import { StylesProvider } from "@material-ui/core/styles";
+import Main from "./Components/Main";
+import styled from "styled-components";
+
+export let store = createStore(
+  reducer,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
 
 function App() {
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AppContainer className="App">
+      {/* Provide access to the redux store through entire application */}
+      <Provider store={store}>
+      {/* Styles Provider for modifying Material-UI default styles with StyledComponents  */}
+        <StylesProvider injectFirst>
+          <Header />
+          <Main />
+        </StylesProvider>
+      </Provider>
+    </AppContainer>
   );
 }
 
 export default App;
+
+const AppContainer = styled.div`
+  background-color: #e0f2f1;
+  min-height: 100vh;
+`
