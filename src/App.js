@@ -11,9 +11,9 @@ export let store = createStore(
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 
+
 function App() {
-
-
+  
   return (
     <AppContainer className="App">
       {/* Provide access to the redux store through entire application */}
