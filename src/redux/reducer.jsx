@@ -16,8 +16,11 @@ const reducer = (state = defaultState, action) => {
           ...state,
           keywords: array,
         };
+      }else{
+        return{
+          ...state
+        }
       }
-      break;
     case REMOVEKEYWORD:
       //remove keyword from saved list
       return {

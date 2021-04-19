@@ -42,7 +42,7 @@ const Main = () => {
       getImages(keyword);
       store.dispatch(currentKeyword(keyword));
       form.current.reset();
-      setKeyword('');
+      // setKeyword('');
     }
   };
 

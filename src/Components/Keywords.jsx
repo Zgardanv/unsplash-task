@@ -8,16 +8,16 @@ import RemoveCircleOutlineIcon from "@material-ui/icons/RemoveCircleOutline";
 
 const Keywords = ({ keywordHandler }) => {
   const [length, setLength] = useState(0);
+  //Load current keyword from redux store
   const current = store.getState().searchWord;
+  //Load saved keywords from redux store
+  const savedQueries = store.getState().keywords;
 
   //Search keyword sending to redux store
   const sendToStore = () => {
     setLength((prev) => prev + 1);
     store.dispatch(addKeyword(current));
   };
-
-  //Load saved keywords from redux store
-  const savedQueries = store.getState().keywords;
 
   //Send to store item which should be removed
   const removeItem = (item) => {
