@@ -74,11 +74,11 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
 `;
 
 const Keyword = styled.div`
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
   padding: 5px 10px;
   margin: 5px;
