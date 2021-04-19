@@ -5,7 +5,6 @@ import styled from "styled-components";
 //single image component 
 
 const ImageItem = ({ item }) => {
-    console.log(item.urls)
   const Image = styled(Grid)`
     background-image: url(${item.urls.small});
     background-position: center;

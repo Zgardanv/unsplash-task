@@ -37,10 +37,13 @@ const Main = () => {
 
   //Search button click event
   const handleSubmit = () => {
-    setLoading(true);
-    getImages(keyword);
-    store.dispatch(currentKeyword(keyword));
-    form.current.reset();
+    if(keyword){
+      setLoading(true);
+      getImages(keyword);
+      store.dispatch(currentKeyword(keyword));
+      form.current.reset();
+      setKeyword('');
+    }
   };
 
   //Submit form controller
