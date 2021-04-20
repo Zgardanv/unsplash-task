@@ -10,7 +10,7 @@ const ImageItem = ({ item }) => {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 200px;
+    height: 300px;
   `;
   return <Image item xs={6} sm={4} md={3} lg={3} />;
 };
